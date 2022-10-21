@@ -2,14 +2,26 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  const title = "Bienvenidos a la clase 3";
+
+  /* CSS-in-JS */
+  const styleH3 = { backgroundColor: "blue", color: "white" };
+
+  let titulo = <h3 style={styleH3}>Hola</h3>;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Bienvenidos a Coderhouse!!!!!</p>
-        <h2>Estamos listos!</h2>
-      </header>
-    </div>
+    <>
+      {/* UI */}
+      {titulo}
+      <div className="App">
+        {/* camelCase */}
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>{title}</p>
+          <h2>{1 + 2 + 3}</h2>
+        </header>
+      </div>
+    </>
   );
 }
 
