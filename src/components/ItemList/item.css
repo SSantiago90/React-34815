@@ -8,10 +8,11 @@
   height: 100%;
   object-fit: contain;
 }
+
 .card{
   color: #444444;
   margin: 10px 15px;
-  min-height: 600px;
+  min-height: 495px;
   width: 280px;
   height: 100%;
   border-radius: 4px;
