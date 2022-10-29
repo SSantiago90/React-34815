@@ -1,7 +1,7 @@
 import React from "react";
 import CartWidget from "./CartWidget";
 import "./navbar.css";
-
+import ToggleButton from "../ToggleButton/ToggleButton";
 function NavBar() {
   return (
     <nav className="nav-menu">
@@ -20,6 +20,8 @@ function NavBar() {
         <li>
           <CartWidget />
         </li>
+        <ToggleButton icon="😀" />
+        <ToggleButton icon="🛒" />
       </ul>
     </nav>
   );

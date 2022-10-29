@@ -6,13 +6,13 @@
   margin-bottom: 45px;
 }
 
-.nav-list{
-  
+.nav-list{  
   height: 90px;
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 ul{
   list-style: none;
 }
@@ -28,4 +28,8 @@ a{
 a:hover{
   font-weight: 600;
   color:rgb(19, 19, 17)
+}
+
+.nav-menu:hover .card-favicon{
+  display: block;
 }

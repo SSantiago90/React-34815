@@ -1,22 +1,14 @@
 import "./mybutton.css";
 import React, { useState, useEffect } from "react";
 
-/* .................................................... */
-function getDataFromDatabase() {
-  console.log("%cdata from database", "color: lightblue");
-}
-/* .................................................... */
-
 function MyButton(props) {
   let [colorBtn, setColorBtn] = useState(props.color);
 
   console.log("%cRender del componente", "color: pink");
 
-  useEffect(
-    () => {
-      console.log("Component mounting");
-    }, 
-  []);
+  useEffect(() => {
+    console.log("Component mounting");
+  }, []);
 
   function handleClick() {
     setColorBtn("grey");
