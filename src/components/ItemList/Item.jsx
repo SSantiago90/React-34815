@@ -3,10 +3,6 @@ import MyButton from "../MyButton/MyButton";
 import ToggleButton from "../ToggleButton/ToggleButton";
 import "./item.css";
 
-function ComponenteCualquiera() {
-  return <h1 style={{ color: "green" }}>Hola Mundo</h1>;
-}
-
 function Item({ title, imgurl, price, color }) {
   return (
     <div className="card">
@@ -25,4 +21,3 @@ function Item({ title, imgurl, price, color }) {
 }
 
 export default Item;
-export { ComponenteCualquiera };

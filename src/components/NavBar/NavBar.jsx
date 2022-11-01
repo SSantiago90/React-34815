@@ -20,8 +20,6 @@ function NavBar() {
         <li>
           <CartWidget />
         </li>
-        <ToggleButton icon="😀" />
-        <ToggleButton icon="🛒" />
       </ul>
     </nav>
   );
