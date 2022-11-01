@@ -5,7 +5,7 @@ const products = [
     price: 649,
     stock: 54,
     category: "smartphones",
-    thumbnail: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
     description: "An apple mobile which is nothing like apple",
   },
   {
@@ -16,7 +16,7 @@ const products = [
     price: 899,
     stock: 34,
     category: "smartphones",
-    thumbnail: "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
   },
   {
     id: 4,
@@ -25,7 +25,7 @@ const products = [
     price: 280,
     stock: 123,
     category: "smartphones",
-    thumbnail: "https://dummyjson.com/image/i/products/4/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/4/thumbnail.jpg",
   },
   {
     id: 5,
@@ -35,7 +35,7 @@ const products = [
     price: 499,
     stock: 32,
     category: "smartphones",
-    thumbnail: "https://dummyjson.com/image/i/products/5/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/5/thumbnail.jpg",
   },
   {
     id: 6,
@@ -45,7 +45,7 @@ const products = [
     price: 1749,
     stock: 83,
     category: "laptops",
-    thumbnail: "https://dummyjson.com/image/i/products/6/thumbnail.png",
+    imgurl: "https://dummyjson.com/image/i/products/6/thumbnail.png",
   },
   {
     id: 7,
@@ -55,7 +55,7 @@ const products = [
     price: 1499,
     stock: 50,
     category: "laptops",
-    thumbnail: "https://dummyjson.com/image/i/products/7/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/7/thumbnail.jpg",
   },
   {
     id: 8,
@@ -65,7 +65,7 @@ const products = [
     price: 1499,
     stock: 68,
     category: "laptops",
-    thumbnail: "https://dummyjson.com/image/i/products/8/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/8/thumbnail.jpg",
   },
   {
     id: 9,
@@ -75,7 +75,7 @@ const products = [
     price: 1099,
     stock: 96,
     category: "laptops",
-    thumbnail: "https://dummyjson.com/image/i/products/9/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/9/thumbnail.jpg",
   },
   {
     id: 10,
@@ -85,7 +85,7 @@ const products = [
     price: 1099,
     stock: 89,
     category: "laptops",
-    thumbnail: "https://dummyjson.com/image/i/products/10/thumbnail.jpeg",
+    imgurl: "https://dummyjson.com/image/i/products/10/thumbnail.jpeg",
   },
   {
     id: 11,
@@ -95,7 +95,7 @@ const products = [
     price: 13,
     stock: 65,
     category: "fragrances",
-    thumbnail: "https://dummyjson.com/image/i/products/11/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/11/thumbnail.jpg",
   },
   {
     id: 12,
@@ -104,7 +104,7 @@ const products = [
     price: 40,
     stock: 52,
     category: "fragrances",
-    thumbnail: "https://dummyjson.com/image/i/products/12/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/12/thumbnail.jpg",
   },
   {
     id: 13,
@@ -114,7 +114,7 @@ const products = [
     price: 13,
     stock: 61,
     category: "fragrances",
-    thumbnail: "https://dummyjson.com/image/i/products/13/thumbnail.webp",
+    imgurl: "https://dummyjson.com/image/i/products/13/thumbnail.webp",
   },
   {
     id: 14,
@@ -124,7 +124,7 @@ const products = [
     price: 120,
     stock: 114,
     category: "fragrances",
-    thumbnail: "https://dummyjson.com/image/i/products/14/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/14/thumbnail.jpg",
   },
   {
     id: 15,
@@ -134,7 +134,7 @@ const products = [
     price: 30,
     stock: 105,
     category: "fragrances",
-    thumbnail: "https://dummyjson.com/image/i/products/15/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/15/thumbnail.jpg",
   },
   {
     id: 16,
@@ -144,7 +144,7 @@ const products = [
     price: 19,
     stock: 110,
     category: "skincare",
-    thumbnail: "https://dummyjson.com/image/i/products/16/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/16/thumbnail.jpg",
   },
   {
     id: 17,
@@ -154,7 +154,7 @@ const products = [
     price: 12,
     stock: 78,
     category: "skincare",
-    thumbnail: "https://dummyjson.com/image/i/products/17/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/17/thumbnail.jpg",
   },
   {
     id: 18,
@@ -164,7 +164,7 @@ const products = [
     price: 40,
     stock: 88,
     category: "skincare",
-    thumbnail: "https://dummyjson.com/image/i/products/18/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/18/thumbnail.jpg",
   },
   {
     id: 19,
@@ -174,7 +174,7 @@ const products = [
     price: 46,
     stock: 54,
     category: "skincare",
-    thumbnail: "https://dummyjson.com/image/i/products/19/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/19/thumbnail.jpg",
   },
   {
     id: 20,
@@ -184,7 +184,7 @@ const products = [
     price: 70,
     stock: 140,
     category: "skincare",
-    thumbnail: "https://dummyjson.com/image/i/products/20/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/20/thumbnail.jpg",
   },
   {
     id: 21,
@@ -193,7 +193,7 @@ const products = [
     price: 20,
     stock: 133,
     category: "groceries",
-    thumbnail: "https://dummyjson.com/image/i/products/21/thumbnail.png",
+    imgurl: "https://dummyjson.com/image/i/products/21/thumbnail.png",
   },
   {
     id: 22,
@@ -202,7 +202,7 @@ const products = [
     price: 14,
     stock: 146,
     category: "groceries",
-    thumbnail: "https://dummyjson.com/image/i/products/22/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/22/thumbnail.jpg",
   },
   {
     id: 23,
@@ -212,7 +212,7 @@ const products = [
     price: 14,
     stock: 26,
     category: "groceries",
-    thumbnail: "https://dummyjson.com/image/i/products/23/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/23/thumbnail.jpg",
   },
   {
     id: 24,
@@ -222,7 +222,7 @@ const products = [
     price: 46,
     stock: 113,
     category: "groceries",
-    thumbnail: "https://dummyjson.com/image/i/products/24/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/24/thumbnail.jpg",
   },
   {
     id: 25,
@@ -231,7 +231,7 @@ const products = [
     price: 70,
     stock: 47,
     category: "groceries",
-    thumbnail: "https://dummyjson.com/image/i/products/25/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/25/thumbnail.jpg",
   },
   {
     id: 26,
@@ -241,7 +241,7 @@ const products = [
     price: 41,
     stock: 131,
     category: "home-decoration",
-    thumbnail: "https://dummyjson.com/image/i/products/26/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/26/thumbnail.jpg",
   },
   {
     id: 27,
@@ -251,7 +251,7 @@ const products = [
     price: 51,
     stock: 17,
     category: "home-decoration",
-    thumbnail: "https://dummyjson.com/image/i/products/27/thumbnail.webp",
+    imgurl: "https://dummyjson.com/image/i/products/27/thumbnail.webp",
   },
   {
     id: 28,
@@ -261,7 +261,7 @@ const products = [
     price: 20,
     stock: 54,
     category: "home-decoration",
-    thumbnail: "https://dummyjson.com/image/i/products/28/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/28/thumbnail.jpg",
   },
   {
     id: 29,
@@ -271,7 +271,7 @@ const products = [
     price: 60,
     stock: 7,
     category: "home-decoration",
-    thumbnail: "https://dummyjson.com/image/i/products/29/thumbnail.webp",
+    imgurl: "https://dummyjson.com/image/i/products/29/thumbnail.webp",
   },
   {
     id: 30,
@@ -281,7 +281,7 @@ const products = [
     price: 30,
     stock: 54,
     category: "home-decoration",
-    thumbnail: "https://dummyjson.com/image/i/products/30/thumbnail.jpg",
+    imgurl: "https://dummyjson.com/image/i/products/30/thumbnail.jpg",
   },
 ];
 

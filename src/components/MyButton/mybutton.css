@@ -7,7 +7,7 @@
   border: none;
   margin: 5px 15px;
   cursor: pointer;
-  transition: all ease-in-out 200ms;
+  transition: all ease-out 120ms;
 }
 
 .btn .animate{
