@@ -2,8 +2,8 @@ const products = [
   {
     id: 1,
     title: "iPhone 9",
-    price: 649,
-    stock: 54,
+    price: 700,
+    stock: 49,
     category: "smartphones",
     imgurl: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
     description: "An apple mobile which is nothing like apple",

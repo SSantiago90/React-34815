@@ -1,8 +1,21 @@
+import { useState, useEffect } from "react";
+
 import Item from "./Item";
 import "./itemlist.css";
-import products from "../../data/data";
+import getItems from "../../Services/mockService";
 
 function ItemListContainer() {
+  const [products, setProducts] = useState([]);
+
+  async function getItemsAsync() {
+    let respuesta = await getItems();
+    setProducts(respuesta);
+  }
+
+  useEffect(() => {
+    getItemsAsync();
+  }, []);
+
   return (
     <div className="item-list">
       {products.map((product) => {
