@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import ItemListContainer from "./components/ItemList/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 
@@ -12,7 +13,8 @@ function App() {
       <div className="App">
         <NavBar />
         {titulo}
-        <ItemListContainer />
+        {/* <ItemListContainer /> */}
+        <ItemDetailContainer />
       </div>
     </>
   );

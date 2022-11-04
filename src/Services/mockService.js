@@ -9,4 +9,12 @@ function getItems() {
   });
 }
 
+export function getSingleItem() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(products[4]);
+    }, 2000);
+  });
+}
+
 export default getItems;
