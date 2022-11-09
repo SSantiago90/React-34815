@@ -1,11 +1,18 @@
 import { useState, useEffect } from "react";
 import { getSingleItem } from "../../Services/mockService";
+import ItemDetail from "./ItemDetail";
+
+import { useParams } from "react-router-dom";
 
 function ItemDetailContainer() {
   const [product, setProduct] = useState([]);
+  /* const paramsUrl = useParams();
+  const id = paramsUrl.id; */
+  const { idItem } = useParams();
+  console.log(useParams());
 
   async function getItemsAsync() {
-    let respuesta = await getSingleItem();
+    let respuesta = await getSingleItem(idItem);
     setProduct(respuesta);
   }
 
@@ -13,12 +20,6 @@ function ItemDetailContainer() {
     getItemsAsync();
   }, []);
 
-  return (
-    <div className="item-list">
-      <h3>{product.title}</h3>
-      <img src={product.imgurl} />
-    </div>
-  );
+  return <ItemDetail product={product} />;
 }
-
 export default ItemDetailContainer;

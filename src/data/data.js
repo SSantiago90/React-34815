@@ -1,11 +1,11 @@
-const products = [
+const products = [ 
   {
     id: 1,
     title: "iPhone 9",
     price: 700,
     stock: 49,
     category: "smartphones",
-    imgurl: "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
+    imgurl: "/imgs/pantalonY.webp",
     description: "An apple mobile which is nothing like apple",
   },
   {

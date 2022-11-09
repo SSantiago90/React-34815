@@ -1,18 +1,31 @@
 /* -------------- BACK-END -------------- */
 import products from "../data/data";
 
-function getItems() {
+function getItems(idCategory) {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 2000);
+    if (idCategory === undefined) {
+      setTimeout(() => {
+        resolve(products);
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        let itemsRequested = products.filter(
+          (item) => item.category === idCategory
+        );
+        resolve(itemsRequested);
+      }, 2000);
+    }
   });
 }
 
-export function getSingleItem() {
-  return new Promise((resolve) => {
+export function getSingleItem(idParam) {
+  return new Promise((resolve, reject) => {
+    let itemRequested = products.find((item) => item.id === Number(idParam));
+
+    if (itemRequested === undefined) reject("Item no encontrado");
+
     setTimeout(() => {
-      resolve(products[4]);
+      resolve(itemRequested);
     }, 2000);
   });
 }
