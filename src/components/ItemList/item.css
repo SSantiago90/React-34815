@@ -28,16 +28,13 @@
   transform: translateY(-6px);
 }
 
-.card-detail{
-  color: #333333;
+.card_detail{
   padding: 12px 8px;
 }
 
 .card:hover .card-favicon{
   display: block;
 }
-
-
 
 .card-favicon{
   display: none;

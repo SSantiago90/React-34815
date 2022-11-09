@@ -12,9 +12,9 @@ function Item({ title, imgurl, price, color, id }) {
       <div className="card-img">
         <img src={imgurl} alt={title} />
       </div>
-      <div className="card-detail">
+      <div className="card_detail">
         <h3>{title}</h3>
-        <p>${price}</p>
+        <h4 className="priceTag">$ {price}</h4>
       </div>
 
       <Link to={urlDetail}>

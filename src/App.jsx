@@ -8,8 +8,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="app">
+    <div className="App">
+      <BrowserRouter>
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
@@ -19,8 +19,8 @@ function App() {
           <Route path="/detail/:idItem" element={<ItemDetailContainer />} />
           <Route path="*" element={<h1>Error 404: Está página no existe</h1>} />
         </Routes>
-      </div>
-    </BrowserRouter>
+      </BrowserRouter>
+    </div>
   );
 }
 

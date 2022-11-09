@@ -11,6 +11,7 @@ function ItemDetail({ product }) {
         <p>{product.description}</p>
         <h4 className="priceTag">$ {product.price}</h4>
       </div>
+      {/* <ItemCount stock={product.stock}/> */}
     </div>
   );
 }
