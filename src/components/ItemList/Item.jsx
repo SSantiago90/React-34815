@@ -18,7 +18,9 @@ function Item({ title, imgurl, price, color, id }) {
       </div>
 
       <Link to={urlDetail}>
-        <MyButton color={color}>Ver más</MyButton>
+        <MyButton onTouchButton={() => console.log("click")} color={color}>
+          Ver más
+        </MyButton>
       </Link>
     </div>
   );

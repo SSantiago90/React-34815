@@ -1,9 +1,9 @@
-const products = [ 
+const products = [
   {
     id: 1,
     title: "iPhone 9",
     price: 700,
-    stock: 49,
+    stock: 2,
     category: "smartphones",
     imgurl: "/imgs/pantalonY.webp",
     description: "An apple mobile which is nothing like apple",
