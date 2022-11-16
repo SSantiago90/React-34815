@@ -9,7 +9,6 @@ function ItemDetailContainer() {
   /* const paramsUrl = useParams();
   const id = paramsUrl.id; */
   const { idItem } = useParams();
-  console.log(useParams());
 
   async function getItemsAsync() {
     let respuesta = await getSingleItem(idItem);

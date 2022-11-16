@@ -5,20 +5,31 @@ import ItemListContainer from "./components/ItemList/ItemListContainer";
 import NavBar from "./components/NavBar/NavBar";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ItemCount from "./components/ItemCount/ItemCount";
+import { CartContextProvider } from "./context/cartContext";
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<ItemListContainer />} />
-          <Route path="/category/:idCategory" element={<ItemListContainer />} />
-          <Route path="/detail/:idItem" element={<ItemDetailContainer />} />
-          <Route path="*" element={<h1>Error 404: Está página no existe</h1>} />
-        </Routes>
-      </BrowserRouter>
+      <CartContextProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<ItemListContainer />} />
+            <Route
+              path="/category/:idCategory"
+              element={<ItemListContainer />}
+            />
+            <Route path="/detail/:idItem" element={<ItemDetailContainer />} />
+
+            <Route path="/cart" element={<h1>En construcción</h1>} />
+
+            <Route
+              path="*"
+              element={<h1>Error 404: Está página no existe</h1>}
+            />
+          </Routes>
+        </BrowserRouter>
+      </CartContextProvider>
     </div>
   );
 }
