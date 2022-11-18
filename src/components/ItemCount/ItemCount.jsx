@@ -24,7 +24,6 @@ function ItemCount({ stock, onAddToCart }) {
         </MyButton>
       </div>
       <div className="itemcount_btns">
-        {/* 3. agregar un onClick con el evento recibido por Props */}
         <MyButton onTouchButton={() => onAddToCart(count)}>
           Agregar al carrito
         </MyButton>
