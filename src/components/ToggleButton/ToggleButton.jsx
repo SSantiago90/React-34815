@@ -5,6 +5,7 @@ function ToggleButton(props) {
 
   const handleFavorite = () => {
     setIsFavorite(!isFavorite);
+    props.onClick();
   };
 
   let classNameFavBtn = isFavorite ? "card-favicon favorite" : "card-favicon";

@@ -22,6 +22,9 @@ function NavBar() {
           <Link to="/category/skincare">Skin Care</Link>
         </li>
         <li>
+          <Link to="/buscar">Buscar</Link>
+        </li>
+        <li>
           <CartWidget />
         </li>
       </ul>

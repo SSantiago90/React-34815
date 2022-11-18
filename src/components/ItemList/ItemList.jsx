@@ -1,7 +1,7 @@
-import React from "react";
+import React, {memo} from "react";
 import Item from "./Item";
 
-function ItemList({ products }) {
+function ItemList({ products, handleFavorite}) {
   return (
     <div className="item-list">
       {products.map((product) => {
@@ -15,6 +15,7 @@ function ItemList({ products }) {
             stock={product.stock}
             category={product.category}
             discount={product.discount}
+            handleFavorite={handleFavorite}
             color="darkgreen"
           />
         );
@@ -23,4 +24,4 @@ function ItemList({ products }) {
   );
 }
 
-export default React.memo(ItemList);
+export default memo(ItemList);

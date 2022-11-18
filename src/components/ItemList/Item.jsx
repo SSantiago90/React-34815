@@ -4,13 +4,22 @@ import ToggleButton from "../ToggleButton/ToggleButton";
 import "./item.css";
 import { Link } from "react-router-dom";
 
-function Item({ title, imgurl, price, stock, color, id, discount }) {
+function Item({
+  title,
+  imgurl,
+  price,
+  stock,
+  color,
+  id,
+  discount,
+  handleFavorite,
+}) {
   const urlDetail = `/detail/${id}`;
   const stylePrice = { color: discount && "green" };
 
   return (
     <div className="card">
-      <ToggleButton icon="♥" />
+      <ToggleButton onClick={() => handleFavorite(id)} icon="♥" />
       <div className="card-img">
         <img src={imgurl} alt={title} />
       </div>

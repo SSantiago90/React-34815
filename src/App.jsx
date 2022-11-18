@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./context/cartContext";
 import CartView from "./components/CartView/CartView";
+import ItemListContainerSearch from "./components/ItemList/ItemListContainerSearch";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
 
             <Route path="/cart" element={<CartView />} />
 
+            <Route path="/buscar" element={<ItemListContainerSearch />} />
             <Route
               path="*"
               element={<h1>Error 404: Está página no existe</h1>}
