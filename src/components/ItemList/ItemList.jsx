@@ -8,6 +8,7 @@ function ItemList({ products }) {
         return (
           <Item
             key={product.id}
+
             id={product.id}
             imgurl={product.imgurl}
             title={product.title}
@@ -16,7 +17,7 @@ function ItemList({ products }) {
             category={product.category}
             discount={product.discount}
             color="darkgreen"
-          />
+          /> 
         );
       })}
     </div>

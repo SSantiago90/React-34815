@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./itemlist.css";
-import getItems from "../../Services/mockService";
+import getItems, { getItemsByCategory } from "../../Services/firestore";
 
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
@@ -12,15 +12,19 @@ function ItemListContainer() {
   const { idCategory } = useParams();
 
   async function getItemsAsync() {
-    let respuesta = await getItems(idCategory);
-    setProducts(respuesta);
+    if( !idCategory ){
+      let respuesta = await getItems();
+      setProducts(respuesta);
+    }
+    else {
+      let respuesta = await getItemsByCategory(idCategory)
+      setProducts(respuesta)
+    }
+    
   }
 
   useEffect(() => {
-    getItemsAsync();
-    return () => {
-      console.log("Componente desmontado");
-    };
+    getItemsAsync();    
   }, [idCategory]);
 
   // 1. Render Condicional con operador ternario

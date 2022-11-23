@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
 import MyButton from "../MyButton/MyButton";
+import "./cartview.css";
 
 function CartView() {
   const { cart, removeItem, clear, priceInCart } = useContext(cartContext);
@@ -10,7 +11,8 @@ function CartView() {
   return (
     <div className="cart-container">
       {cart.map((item) => (
-        <div>
+        <div key={item.id} className="cart-item">
+          <img src={item.imgurl} alt={item.title} />
           <h2>{item.title}</h2>
           <h4>${item.price}</h4>
           <h4>unidades: {item.count}</h4>
