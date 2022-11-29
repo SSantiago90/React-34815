@@ -17,7 +17,7 @@ function ItemList({ products }) {
             category={product.category}
             discount={product.discount}
             color="darkgreen"
-          /> 
+          />
         );
       })}
     </div>

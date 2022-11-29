@@ -7,6 +7,7 @@ import NavBar from "./components/NavBar/NavBar";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartContextProvider } from "./context/cartContext";
 import CartView from "./components/CartView/CartView";
+import ThankYou from "./components/ThankYou/ThankYou";
 
 function App() {
   return (
@@ -23,6 +24,8 @@ function App() {
             <Route path="/detail/:idItem" element={<ItemDetailContainer />} />
 
             <Route path="/cart" element={<CartView />} />
+
+            <Route path="/thankyou/:idOrder" element={<ThankYou />} />
 
             <Route
               path="*"

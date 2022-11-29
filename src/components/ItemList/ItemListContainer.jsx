@@ -12,19 +12,17 @@ function ItemListContainer() {
   const { idCategory } = useParams();
 
   async function getItemsAsync() {
-    if( !idCategory ){
+    if (!idCategory) {
       let respuesta = await getItems();
       setProducts(respuesta);
+    } else {
+      let respuesta = await getItemsByCategory(idCategory);
+      setProducts(respuesta);
     }
-    else {
-      let respuesta = await getItemsByCategory(idCategory)
-      setProducts(respuesta)
-    }
-    
   }
 
   useEffect(() => {
-    getItemsAsync();    
+    getItemsAsync();
   }, [idCategory]);
 
   // 1. Render Condicional con operador ternario

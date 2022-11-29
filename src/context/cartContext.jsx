@@ -10,7 +10,6 @@ export function CartContextProvider({ children }) {
   const [cart, setCart] = useState([]);
 
   function addToCart(product, count) {
-
     let itemAlreadyInCart = cart.findIndex(
       (itemInCart) => itemInCart.id === product.id
     );
@@ -40,6 +39,16 @@ export function CartContextProvider({ children }) {
     return total;
   }
 
+  function priceInCart() {
+    /* calcular el costo total de la compra */
+    let totalPrice = 0;
+    cart.forEach(
+      (producto) =>
+        (totalPrice = totalPrice + producto.price * producto.cantidad)
+    );
+    return totalPrice;
+  }
+
   function clear() {
     /* vaciar el estado */
   }
@@ -52,11 +61,7 @@ export function CartContextProvider({ children }) {
     /* cart.filter -> Filtrar todos los items con un ID diferente a "idRemove"   */
   }
 
-  function priceInCart() {
-    /* calcular el costo total de la compra */
-  }
-
-  function alreadyInCart(id){
+  function alreadyInCart(id) {
     /* return true/false */
   }
 
@@ -70,7 +75,14 @@ export function CartContextProvider({ children }) {
   //4. Pasamos en la prop "value" las variables que queramos hacer visibles
   return (
     <cartContext.Provider
-      value={{ cart, addToCart, saludoContext, itemsInCart, removeItem }}
+      value={{
+        cart,
+        addToCart,
+        saludoContext,
+        itemsInCart,
+        removeItem,
+        priceInCart,
+      }}
     >
       {children}
     </cartContext.Provider>
