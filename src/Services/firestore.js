@@ -111,7 +111,7 @@ export async function createOrder(order) {
   return docOrder.id;
 }
 
-async function exportArrayToFirestore() {
+export async function exportArrayToFirestore() {
   const products = [
     {
       id: 1,

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import { createOrder, exportArrayToFirestore } from "../../Services/firestore";
+import { createOrder } from "../../Services/firestore";
 import { useNavigate } from "react-router-dom";
 
 import MyButton from "../MyButton/MyButton";
 import "./cartview.css";
+import CartForm from "./CartForm";
 
 function CartView() {
   const { cart, removeItem, clear, priceInCart } = useContext(cartContext);
@@ -17,14 +18,10 @@ function CartView() {
       </div>
     );
 
-  async function handleCheckout(evt) {
+  async function handleCheckout(evt, data) {
     // Crear nuestro objeto "orden de compra"
     const order = {
-      buyer: {
-        name: "Santiago",
-        email: "salkinsantiago@a.com",
-        phone: "123123",
-      },
+      buyer: data,
       items: cart,
       total: 0,
       date: new Date(),
@@ -54,9 +51,7 @@ function CartView() {
           </div>
         ))}
       </div>
-      <MyButton colorBtn="green" onTouchButton={handleCheckout}>
-        Finalizar Compra
-      </MyButton>
+      <CartForm onSubmit={handleCheckout} />
       <MyButton>Vaciar carrito</MyButton>
     </div>
   );
