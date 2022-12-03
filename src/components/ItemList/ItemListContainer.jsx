@@ -11,6 +11,8 @@ function ItemListContainer() {
   /* const [isLoading, setIsLoading] = useState(true) */
   const { idCategory } = useParams();
 
+  console.log(products);
+
   async function getItemsAsync() {
     if (!idCategory) {
       let respuesta = await getItems();
@@ -28,7 +30,11 @@ function ItemListContainer() {
   // 1. Render Condicional con operador ternario
   return (
     <div className="catalogo">
-      {products ? <ItemList products={products} /> : <Loader />}
+      {products ? (
+        <ItemList products={products} />
+      ) : (
+        <Loader size={240} color="orange" />
+      )}
     </div>
   );
 }

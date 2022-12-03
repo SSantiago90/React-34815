@@ -7,14 +7,19 @@ import { Link } from "react-router-dom";
 
 function ItemDetail({ product }) {
   const [isInCart, setIsInCart] = useState(false);
-  const { addToCart } = useContext(cartContext);
+
+  const { addToCart, cart } = useContext(cartContext);
 
   function onAddToCart(count) {
     setIsInCart(count);
     addToCart(product, count);
   }
 
- 
+  let itemInContext = cart.find((itemInCart) => itemInCart.id === product.id);
+  let stockUpdated =
+    itemInContext !== undefined
+      ? product.stock - itemInContext.count
+      : product.stock;
 
   return (
     <div className="card-detail">
@@ -31,9 +36,8 @@ function ItemDetail({ product }) {
           <MyButton>Ir al Carrito</MyButton>
         </Link>
       ) : (
-        <ItemCount onAddToCart={onAddToCart} stock={product.stock} />
+        <ItemCount onAddToCart={onAddToCart} stock={stockUpdated} />
       )}
-    
     </div>
   );
 }

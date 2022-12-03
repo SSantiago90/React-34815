@@ -25,7 +25,7 @@ function ItemDetailContainer() {
   }, []);
 
   // 2. if -> retorno anticipado / early return
-  if (isLoading) return <Loader />;
+  if (isLoading) return <Loader size={240} color="orange" />;
 
   return <ItemDetail product={product} />;
 }

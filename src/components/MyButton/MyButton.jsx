@@ -6,6 +6,7 @@ function MyButton(props) {
 
   return (
     <button
+      disabled={props.disabled}
       onClick={props.onTouchButton}
       style={{ backgroundColor: colorBtn, marginBotton: "10px" }}
       className="btn"

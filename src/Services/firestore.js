@@ -10,6 +10,8 @@ import {
   addDoc,
   orderBy,
   limit,
+  documentId,
+  writeBatch,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -84,7 +86,8 @@ export async function getItemsByCategory(categoryParams) {
 
   const queryCat = query(
     collectionRef,
-    where("category", "==", categoryParams)
+    where("category", "==", categoryParams),
+    orderBy("title")
   );
 
   const documentSnapshot = await getDocs(queryCat);
@@ -109,6 +112,35 @@ export async function createOrder(order) {
   const docOrder = await addDoc(collectionRef, order);
 
   return docOrder.id;
+}
+
+//4.B Enviar la orden a Firebase con Control de stock
+export async function createOrderWithStockControl(order) {
+  const collectionRef = collection(DB, "orders");
+  const batch = writeBatch(DB);
+
+  let arrayIds = order.items.map((item) => item.id);
+
+  const collectionProductsRef = collection(DB, "products");
+
+  const q = query(collectionProductsRef, where(documentId(), "in", arrayIds));
+
+  const productsSnap = await getDocs(q);
+  const productsDocs = productsSnap.docs;
+
+  productsDocs.forEach((doc) => {
+    let stockActual = doc.data().stock;
+    let itemInCart = order.items.find((item) => item.id === doc.id);
+    let stockAActualizar = stockActual - itemInCart.count;
+    if (stockAActualizar < 0)
+      throw new Error("No hay stock disponible para el producto" + doc.id);
+
+    batch.update(doc.ref, { stock: stockAActualizar });
+  });
+
+  const docRef = doc(collectionRef);
+  batch.set(docRef, order);
+  batch.commit();
 }
 
 export async function exportArrayToFirestore() {

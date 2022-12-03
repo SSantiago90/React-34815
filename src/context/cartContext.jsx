@@ -20,16 +20,9 @@ export function CartContextProvider({ children }) {
       newCart[itemAlreadyInCart].count += count;
       setCart(newCart);
     } else {
-      /* let newCart = cart.map( item => item); */
-
-      //1) agregando una propiedad
       product.count = count;
-      newCart.push(product);
-
-      //2) usando spread
-      /* newCart.push( ...product,count) */
-
-      setCart(newCart);
+      cart.push(product);
+      setCart(cart);
     }
   }
 
@@ -40,7 +33,6 @@ export function CartContextProvider({ children }) {
   }
 
   function priceInCart() {
-    /* calcular el costo total de la compra */
     let totalPrice = 0;
     cart.forEach(
       (producto) =>
@@ -50,7 +42,7 @@ export function CartContextProvider({ children }) {
   }
 
   function clear() {
-    /* vaciar el estado */
+    setCart([]);
   }
 
   function removeItem(idRemove) {
@@ -76,6 +68,7 @@ export function CartContextProvider({ children }) {
   return (
     <cartContext.Provider
       value={{
+        clear,
         cart,
         addToCart,
         saludoContext,

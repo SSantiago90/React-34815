@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { cartContext } from "../../context/cartContext";
-import { createOrder } from "../../Services/firestore";
+import { createOrderWithStockControl } from "../../Services/firestore";
 import { useNavigate } from "react-router-dom";
 
 import MyButton from "../MyButton/MyButton";
@@ -18,22 +18,19 @@ function CartView() {
       </div>
     );
 
-  async function handleCheckout(evt, data) {
-    // Crear nuestro objeto "orden de compra"
+  async function handleCheckout(data) {
     const order = {
       buyer: data,
       items: cart,
-      total: 0,
+      total: priceInCart(),
       date: new Date(),
     };
 
-    const orderId = await createOrder(order);
-    navigate(`/thankyou/${orderId}`);
-    /* ${orderId} */
-    //1. Hacer un rendering condicional -> guardamos el id en un State
-    //2. Sweet Alert/Notificación -> mostrando el id
-    //3. Redirigir al usuario a /thankyou
-    //3-b Redirigir al usuario a /thankyou/:orderid (persistencia)
+    createOrderWithStockControl(order).then((respuesta) => {
+      clear();
+      navigate(`/thankyou/${respuesta}`);
+    })
+    .catch(error => alert(error))
   }
 
   return (
